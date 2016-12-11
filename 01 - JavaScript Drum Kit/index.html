@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
 </head>
+
 <body>
 
+  <!-- Data Keys is something we can make up with as long
+  it is behind the word data-->
 
   <div class="keys">
     <div data-key="65" class="key">
@@ -47,6 +51,7 @@
     </div>
   </div>
 
+  <!-- Where all the audio data goes -->
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -57,27 +62,7 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
-
-
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    if (!audio) return; // stop the function from running all together
-    audio.currentTime = 0; // rewind to the start
-    audio.play();
-    key.classList.add('playing');
-  }
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return; // skip it if it's not a transform
-    this.classList.remove('playing');
-  }
-
-  const keys = document.querySelectorAll('.key');
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
-
-</script>
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
