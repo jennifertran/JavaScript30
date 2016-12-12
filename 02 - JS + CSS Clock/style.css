@@ -1,5 +1,6 @@
 html {
-  background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+  background:#38A400 url(http://unsplash.it/1500/1000?image=1039&blur=20);
+  https://unsplash.com/photos/VB-w_3dnyvI
   background-size:cover;
   font-family:'helvetica neue';
   text-align: center;
@@ -42,4 +43,8 @@ body {
   background:black;
   position: absolute;
   top:50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0, 2.56);
 }
