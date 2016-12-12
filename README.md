@@ -2,6 +2,6 @@
 
 # JavaScript30
 
-A 30 Day Vanilla JS Challenge at [https://JavaScript30.com](https://JavaScript30.com)
+A 30 Day Vanilla JS Challenge at <a href="https://JavaScript30.com" target="_blank">https://JavaScript30.com</a>
 
-To see the work live, go to [https://jennifertran.github.io/JavaScript30](https://jennifertran.github.io/JavaScript30)
+To see the work live, go to <a href="https://jennifertran.github.io/JavaScript30" target="_blank">https://jennifertran.github.io/JavaScript30</a> 
