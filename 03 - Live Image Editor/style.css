@@ -1,0 +1,51 @@
+/*
+  Goal is ti update CSS Variables with JS
+*/
+
+/* Declare it at the highest level you can get */
+:root {
+  /* Default Variables */
+  --base: #0fbd4f;
+  --spacing: 10px;
+  --blur: 1px;
+}
+
+.h1 {
+  color: var(--base);
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+body {
+  text-align: center;
+}
+
+body {
+  background: #141E30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  font-family: 'helvetica neue', sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+a {
+  color: var(--base);
+  text-decoration: none;
+}
+
+input {
+  width:100px;
+}
