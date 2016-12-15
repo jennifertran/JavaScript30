@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+  background:#ffffff;
+  font-family:'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.panels {
+  min-height:100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  background:#0f8b9c;
+  box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+  color:white;
+  text-align: center;
+  align-items:center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition:
+    /* cubic-bezier gives us that snapping effect (like the clock) */
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size:cover;
+  background-position:center;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Evenly distribute space among themseleves */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.panel1 { background-image:url(https://source.unsplash.com/GKR1tBkmW3M/1500x1500);
+}
+
+.panel2 { background-image:url(https://source.unsplash.com/3I5j50pIXvU/1500x1500);
+}
+
+.panel3 {
+  background-image:url(https://source.unsplash.com/e6Fi_FBMfY0/1500x1500/);
+}
+
+.panel5 { background-image:url(https://source.unsplash.com/TYIzeCiZ_60/1500x1500);
+}
+
+.panel4 { background-image:url(https://source.unsplash.com/Pn6iimgM-wo/1500x1500);
+}
+
+/* Flex Items */
+.panel > * {
+  margin:0;
+  width: 100%;
+  transition:transform 0.5s;
+  /*
+  This helps us visualize where the content are on the page
+  border: 1px solid red;
+  */
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* first children are the first top text */
+.panel > *:first-child {
+  transform: translateY(-100%); /* This allows us to hide them for now */
+}
+
+.panel.open-active > *:first-child {
+  transform: translateY(0); /* Should appear as animated */
+}
+
+/* first children are the first top text */
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+
+.panel.open-active > *:last-child {
+  transform: translateY(0); /* Should appear as animated */
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  text-shadow:2px 2px 10px #2F2E33, 2px 2px 14px rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+}
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 4; /* Takes in 4 times the amount of space when the panel is open */
+  font-size:40px;
+}
+
+.cta {
+  color:white;
+  text-decoration: none;
+}
