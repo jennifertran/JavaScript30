@@ -1,5 +1,5 @@
 h1 {
-  font-size: 13vh;
+  font-size: 12vh;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
   font-family: Againts;
 }
@@ -37,33 +37,4 @@ body {
   background: linear-gradient(to left, #6441A5 , #2a0845); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   color: white;
-}
-
-/* Github Corner */
-.github-corner:hover .octo-arm {
-  animation:octocat-wave 560ms ease-in-out;
-}
-
-@keyframes octocat-wave {
-  0%,100% {
-    transform: rotate(0);
-  }
-
-  20%,60% {
-    transform: rotate(-25deg);
-  }
-
-  40%,80% {
-    transform: rotate(10deg);
-  }
-}
-
-@media (max-width:500px) {
-  .github-corner:hover .octo-arm {
-    animation:none;
-  }
-
-  .github-corner .octo-arm{
-    animation:octocat-wave 560ms ease-in-out;
-  }
 }
