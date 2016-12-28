@@ -1,0 +1,68 @@
+html {
+  font-family: sans-serif;
+  background: linear-gradient(334deg, #f52be5, #53b9df, #38d776, #8238d7);
+  background-size: 800% 800%;
+
+  -webkit-animation: prettycolors 200s ease infinite;
+  -moz-animation: prettycolors 200s ease infinite;
+  animation: prettycolors 200s ease infinite;
+}
+
+@-webkit-keyframes prettycolors {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+@-moz-keyframes prettycolors {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+@keyframes prettycolors {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+
+.inbox {
+  max-width:400px;
+  margin:50px auto;
+  background:white;
+  border-radius:5px;
+  box-shadow:10px 10px 0 rgba(0,0,0,0.1);
+}
+
+.item {
+  display:flex;
+  align-items:center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+  border-bottom:0;
+}
+
+input:checked + p {
+  background:#F9F9F9;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  margin:20px;
+}
+
+p {
+  margin:0;
+  padding:20px;
+  transition:background 0.2s;
+  flex:1;
+  font-family:'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+  border-left: 1px solid #D1E2FF;
+}
+
+.details {
+  text-align: center;
+  font-size: 15px;
+}
