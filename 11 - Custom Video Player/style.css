@@ -11,7 +11,7 @@ body {
   display:flex;
   background:#7A419B;
   min-height:100vh;
-  background: linear-gradient(135deg, #7c1599 0%,#921099 48%,#7e4ae8 100%);
+  background: linear-gradient(135deg, #1b979f 0%,#10997c 48%,#1dcbac 100%);
   background-size:cover;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@ body {
 }
 
 .player__button:focus {
-  border-color: #ffc600;
+  border-color: #0047ff;
 }
 
 .player__slider {
@@ -87,9 +87,9 @@ body {
 
 .progress__filled {
   width:50%;
-  background:#ffc600;
+  background:#0047ff;
   flex:0;
-  flex-basis:50%;
+  flex-basis: 5%;
 }
 
 /* unholy css to style input type="range" */
@@ -117,7 +117,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background: #ffc600;
+  background: #0047ff;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.5px;
@@ -140,6 +140,6 @@ input[type=range]::-moz-range-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background: #ffc600;
+  background: #0047ff;
   cursor: pointer;
 }
