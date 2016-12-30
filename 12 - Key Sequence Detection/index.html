@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
+</head>
+<style>
+  h3 {
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #FF00FF;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
+    display: block;
+  }
+</style>
+
+<body>
+
+<div class="container">
+  <h3>What happens if you type "rainbow"?</h3>
+</div>
+
+<script>
+const pressed = [];
+const secretCode = 'rainbow';
+let hidden = false;
+
+window.addEventListener('keyup', (e) => {
+  pressed.push(e.key);
+
+  // The goal is having the pressed array adding up to secretCode
+  pressed.splice(-secretCode.length -1, pressed.length - secretCode.length);
+
+  // Check if this array contains the secret code.
+  if(pressed.join('').includes(secretCode)){
+
+    // Hides the inital text
+    if(!hidden){
+      document.querySelector('.container').style.display = 'none';
+      hidden = true;
+    }
+    cornify_add();
+  }
+});
+
+</script>
+</body>
+</html>
