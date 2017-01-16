@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
+</head>
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>🌈 RAINBOW</h1>
+  </div>
+
+  <style>
+  html {
+    color:black;
+    font-family: sans-serif;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+  }
+
+  h1 {
+    text-shadow: 10px 10px 0 #232928;
+    font-size: 100px;
+  }
+  </style>
+
+<script>
+const hero = document.querySelector('.hero');
+const text = document.querySelector('h1');
+
+// Represents how many pixels it's supposed to be stretched.
+// Start off with 200px.
+const walk = 200;
+
+function shadow(e) {
+  // We could also do
+  // const { offsetWidth: width, offsetHeight: height } = hero;
+  const width = hero.offsetWidth;
+  const height = hero.offsetHeight;
+
+  let x = e.offsetX;
+  let y = e.offsetY;
+
+  // this refers to the hero dev, target refers what the mouse is hovering
+  // We do this to prevent mouse from targeting the child divs
+  if(this !== e.target){
+    // Add the remaining pixels
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+
+  const xWalk = Math.round((x / width * walk) - (walk /2));
+  const yWalk = Math.round((y / width * walk) - (walk /2));
+
+  text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 #c00000,
+    ${xWalk * -1}px ${yWalk}px 0 #f2eb3f,
+    ${yWalk}px ${xWalk * -1}px 0 #7fdfd1,
+    ${yWalk * -1}px ${xWalk}px 0 #ec5486,
+    ${yWalk}px ${xWalk}px 0 #34df3b`;
+}
+
+// Listen for the mouse move event and call shadow
+hero.addEventListener('mousemove', shadow);
+</script>
+
+</body>
+</html>
