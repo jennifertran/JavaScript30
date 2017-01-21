@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Sort Without Articles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
 </head>
 <body>
 
   <style>
     body {
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+      background: url("https://unsplash.it/2000/2000/?random");
       background-size: cover;
       display: flex;
       align-items: center;
@@ -23,7 +25,7 @@
       width: 500px;
       margin: auto;
       padding: 0;
-      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.2);
     }
     #bands li {
       border-bottom: 1px solid #efefef;
@@ -45,18 +47,24 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+// Replaces the articles with nothing
 function strip(bandName) {
+  // When it starts with a,the, or an, replace it via regular expression
+  // The cases are insensitive to capitals
   return bandName.replace(/^(a |the |an )/i, '').trim();
-}
+};
 
-const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
 
+// The Goal is to sort the bands array without including "The", "A", and "An"
+// The bigger one goes on top
+const sorted = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+// Replace the innerHTML with the sorted array
+// Loop over each of them
 document.querySelector('#bands').innerHTML =
-  sortedBands
+  sorted
     .map(band => `<li>${band}</li>`)
     .join('');
-
-console.log(sortedBands);
 
 </script>
 
