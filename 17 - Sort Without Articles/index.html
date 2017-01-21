@@ -54,7 +54,6 @@ function strip(bandName) {
   return bandName.replace(/^(a |the |an )/i, '').trim();
 };
 
-
 // The Goal is to sort the bands array without including "The", "A", and "An"
 // The bigger one goes on top
 const sorted = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
