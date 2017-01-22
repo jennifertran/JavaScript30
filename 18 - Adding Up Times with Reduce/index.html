@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Videos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
 </head>
 <body>
+
+  <center>
+    <p>The main goal of this small project is to convert all the video times in hours, mins, and seconds with the reduce function </p>
+    <p>Please view the console in inspect and refresh for results</p>
+  </center>
+
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -182,6 +190,45 @@
     </li>
 
 <script>
+
+  // Select anything that has a data-time tag
+  // Convert this into an array
+  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+
+  console.log("Given the following array:");
+  console.log(timeNodes);
+
+  // Grab all the times in the array
+  // Convert them into seconds by splitting via mapping parseFloat
+  // mapping takes in an array and exports an array
+  // reduce adds everything up
+
+  // Returns the total amount of video times in seconds
+  const seconds = timeNodes
+    .map(node => node.dataset.time)
+    .map(timeCode => {
+      const [mins, secs] = timeCode.split(':').map(parseFloat);
+      return (mins * 60) + secs;
+    })
+    .reduce((total, vidSeconds) => total + vidSeconds);
+
+
+  console.log("We need to figure out the total amount of seconds which is:");
+  console.log(seconds);
+
+  // Convert total seconds back to hours and mins
+  let secondsLeft = seconds;
+
+  // Math.floor logs the whole number only
+  const hours = Math.floor(secondsLeft / 3600);
+  secondsLeft = secondsLeft % 3600;
+
+  const mins = Math.floor(secondsLeft / 60);
+  secondsLeft = secondsLeft % 60;
+
+  console.log("When converted, the result is: " + hours + " hours, " + mins + " mins, and " + secondsLeft + " seconds.");
+
 </script>
+
 </body>
 </html>
