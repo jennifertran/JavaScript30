@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Get User Media Code Along!</title>
+  <title>Webcam Photo Booth</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
 </head>
 <body>
 
   <div class="photobooth">
     <div class="controls">
       <button onClick="takePhoto()">Take Photo</button>
-<!--       <div class="rgb">
+      <div class="rgb">
         <label for="rmin">Red Min:</label>
         <input type="range" min=0 max=255 name="rmin">
         <label for="rmax">Red Max:</label>
@@ -29,15 +30,19 @@
         <input type="range" min=0 max=255 name="bmin">
         <label for="bmax">Blue Max:</label>
         <input type="range" min=0 max=255 name="bmax">
-      </div> -->
+      </div>
     </div>
 
+    <!-- Where we place special effects -->
     <canvas class="photo"></canvas>
+
+    <!-- Pipe the video webcam into here -->
     <video class="player"></video>
     <div class="strip"></div>
   </div>
 
-  <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+  <!-- Plays a snapping sound -->
+  <audio class="snap" src="snap.mp3" hidden></audio>
 
   <script src="scripts.js"></script>
 
