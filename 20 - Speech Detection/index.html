@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Speech Detection</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/favion-JS3.png">
 </head>
 <body>
 
@@ -10,36 +11,58 @@
   </div>
 
 <script>
+  // Selecting the speech recognition variable from chrome or firefox window
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  // Create an instance of speech recognition
   const recognition = new SpeechRecognition();
+
+  // Gives us the ability to see what we are saying as we speak
   recognition.interimResults = true;
 
+  // We want to create a new paragraph whenever we stop talking
   let p = document.createElement('p');
   const words = document.querySelector('.words');
   words.appendChild(p);
 
+  // Listen for when we start speaking
   recognition.addEventListener('result', e => {
+    // Convert the SpeechRecognition object into a string
     const transcript = Array.from(e.results)
+      // Grab the first thing in each object
       .map(result => result[0])
+      // Do it again to actually grab the text
       .map(result => result.transcript)
-      .join('');
+      // Finally we join the strings together
+      .join('')
 
-      const poopScript = transcript.replace(/poop|poo|shit|dump/gi, '💩');
-      p.textContent = poopScript;
+      // Could replace text thats says poop to a poop emoji
+      //const poopScript = transcript.replace(/poop|poo|shit|dump/gi, '💩');
+      //p.textContent = poopScript;
 
-      if (e.results[0].isFinal) {
+      // Add the transcript to the paragraph tag
+      p.textContent = transcript;
+
+      // Check if the result is final
+      if(e.results[0].isFinal) {
         p = document.createElement('p');
         words.appendChild(p);
       }
+
+      /* Allows us to do stuff if someone says a certain thing
+      if(transcript.includes('something'))
+      {
+        do this
+      }
+      */
   });
 
+  // Whenever the user stops speaking, start it up again
   recognition.addEventListener('end', recognition.start);
 
   recognition.start();
 
 </script>
-
 
   <style>
     html {
@@ -47,7 +70,7 @@
     }
 
     body {
-      background:#ffc600;
+      background:#9c1ac9;
       font-family: 'helvetica neue';
       font-weight: 200;
       font-size: 20px;
