@@ -14,6 +14,7 @@
 .idea/codeStyleSettings.xml
 .idea/jsLibraryMappings.xml
 .idea/vcs.xml
+.idea/
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
