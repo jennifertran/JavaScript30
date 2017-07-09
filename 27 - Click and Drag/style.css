@@ -23,7 +23,6 @@ body {
   padding: 100px;
   width:100%;
   border:1px solid white;
-  box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.09);
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -31,6 +30,7 @@ body {
   cursor: pointer;
   transition: all 0.2s;
   transform: scale(0.98);
+  will-change: transform;
   position: relative;
   background: rgba(255,255,255,0.1);
   font-size: 0;
@@ -68,9 +68,3 @@ body {
 
 .item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
 .item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
-
-.wrap {
-  width: auto;
-  border:2px solid green;
-  height: 100%;
-}
